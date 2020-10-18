@@ -32,10 +32,10 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
     - name: Clone source code
       run: |
+        mkdir -p /opt/images/
         git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
-        sh dl_toolchain.sh
-        mkdir -p /opt/images/
+        sh dl_toolchain.sh  
     - name: Build Firmware
       env:
         TNAME: K2P_nano-5.0
